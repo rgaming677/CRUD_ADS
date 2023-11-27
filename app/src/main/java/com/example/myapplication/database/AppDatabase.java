@@ -10,6 +10,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.myapplication.database.dao.MahasiswaDao;
 import com.example.myapplication.database.entitas.Mahasiswa;
 
 @Database(entities = {Mahasiswa.class}, version = 1)
@@ -20,7 +21,7 @@ public abstract class AppDatabase extends RoomDatabase {
     @VisibleForTesting
     public static final String DATABASE_NAME = "my-database";
 
-    public abstract Mahasiswa MahasiswaDao mahasiswaDao();
+    public abstract MahasiswaDao mahasiswaDao();
 
     private void setDatabaseCreated(){
         mIsDatabaseCreated.postValue(true);
